@@ -1,1 +1,1 @@
-# angular-5-basic-sertup
+# angular-5-basic-setup
