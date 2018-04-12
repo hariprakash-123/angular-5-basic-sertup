@@ -1,0 +1,62 @@
+<div class="wrapper">
+    <div class="block-center mt-xl wd-xl">
+
+        <!-- START panel-->
+        <div class="panel panel-dark panel-flat">
+            <div class="panel-heading text-center">
+                <a href="javascript:void(0)">
+                    <img class="block-center img-rounded" src="assets/img/logo.png" alt="Image" />
+                </a>
+            </div>
+
+            <!--  START Panel Body -->
+            <div class="panel-body">
+                <p class="text-center pv">SIGN IN TO CONTINUE.</p>
+
+                <!-- START Form -->
+                <form class="form-validate mb-lg" *ngIf="loginForm" [formGroup]="loginForm" role="form" (submit)="login()" autocomplete="off">
+
+                    <!-- Username/Email -->
+                    <div class="form-group has-feedback">
+                        <input class="form-control" type="email" name="email" placeholder="Enter username" (click)="loginError=undefined" formControlName="username" required="" />
+                        <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                        <control-messages [control]="loginForm.controls.username"></control-messages>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group has-feedback">
+                        <input class="form-control" type="password" name="password" placeholder="Password" formControlName="password" (click)="loginError=undefined" required="" />
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+                        <control-messages [control]="loginForm.controls.password"></control-messages>
+                    </div>
+
+                    <!-- Remember me / Forget password -->
+                    <div class="clearfix">
+                        <div class="checkbox c-checkbox pull-left mt0">
+                            <label>
+                                <input type="checkbox" value="" name="account_remember"/>
+                                <span class="fa fa-check"></span>Remember Me
+                            </label>
+                        </div>
+                        <div class="pull-right">
+                            <a class="text-muted" [routerLink]="'/auth/login'">Forgot your password?</a>
+                        </div>
+                    </div>
+
+                    <!-- Error message -->
+                    <div *ngIf="loginError" class="form-error text-center">{{ loginError }}</div>
+
+                    <!-- Login button -->
+                    <button class="btn btn-block btn-primary mt-lg" [disabled]="!loginForm.valid || loginError" type="submit">Login</button>
+
+                </form>
+                <!-- END Form -->
+
+            </div>
+            <!--  END Panel Body -->
+
+        </div>
+        <!-- END panel-->
+        
+    </div>
+</div>

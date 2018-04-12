@@ -1,0 +1,16 @@
+// Custom form error control message 
+.form-error {
+  color: red;
+  margin: 2px 0 3px;
+  padding: 5px 0 5px 10px;
+  padding-left: 10px;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 1;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
